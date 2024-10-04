@@ -1,0 +1,18 @@
+/* MAIN */
+
+embed{
+    width: 100%;    
+}
+
+main{
+    padding: 0 1em;
+}
+
+img{
+    width: 100%;
+}
+
+.columns{
+    display: flex;
+    justify-content: space-between;
+}

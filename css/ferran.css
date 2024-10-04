@@ -1,0 +1,63 @@
+/* FERRAN */
+header.sticky{
+    position: fixed;
+    top: 0;
+    transition: top 0.30s;
+    width: 100%;
+    z-index: 2;
+}
+
+main{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+#card{
+    background-color: #303838;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    text-align: center;
+    color: antiquewhite;
+    padding: 1em 0;
+}
+
+#card p{
+   padding: 0 1em;
+}
+
+#card img{
+    align-self: center;
+    width: 100%;
+} 
+
+#card h1{
+    font-family: Impact;
+    color: burlywood;
+    font-size: 300%;
+    align-self: center;
+    margin: 0;
+}
+
+.yt-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em 0;
+    box-sizing: border-box;
+}
+
+iframe{
+    aspect-ratio: 16 / 9;
+    width: 27em;
+    padding: 1%;
+}
+
+
+#yt1{
+    left: 1em;
+}
+
+#yt2{
+    right: 1em;
+}
