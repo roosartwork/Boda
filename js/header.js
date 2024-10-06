@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!header || !logo) return;
 
-            const originalSrc = '../logo/logoTight.png';
-            const stickySrc = '../logo/logoSimplified.png';
+            const originalSrc = '../../logo/logoTight.png';
+            const stickySrc = '../../logo/logoSimplified.png';
 
             // Add sticky class when scrolled past header
             function updateHeader() {
                 if (window.scrollY > header.offsetHeight) {
-                    header.classList.add('sticky');
+                    header.classList.add('fixed');
                     logo.src = stickySrc;
                 } else {
-                    header.classList.remove('sticky');
+                    header.classList.remove('relative');
                     logo.src = originalSrc;
                 }
             }
