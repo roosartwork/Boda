@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("menu").innerHTML = data;
 
             const header = document.getElementById('header');
+            const banner = document.getElementById('banner');
             const logo = document.getElementById('logo');
 
             if (!header || !logo) return;
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Add sticky class when scrolled past header
             function updateHeader() {
-                if (window.scrollY > header.offsetHeight) {
+                if (window.scrollY > banner.offsetHeight) {
                     header.classList.add('fixed');
                     logo.src = stickySrc;
                 } else {
