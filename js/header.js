@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (window.scrollY > header.offsetHeight) {
                     header.classList.add('sticky');
                     logo.src = stickySrc;
-                } else {
-                    header.classList.remove('sticky');
-                    logo.src = originalSrc;
-                }
+                //} else {
+                    //header.classList.remove('sticky');
+                   // logo.src = originalSrc;
+               // }
             }
 
             window.addEventListener('scroll', updateHeader);
