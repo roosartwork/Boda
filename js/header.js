@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add sticky class when scrolled past header
             function updateHeader() {
                 if (window.scrollY > header.offsetHeight) {
-                    header.classList.add('fixed');
+                    header.classList.add('sticky');
                     logo.src = stickySrc;
                 } else {
-                    header.classList.remove('relative');
+                    header.classList.remove('sticky');
                     logo.src = originalSrc;
                 }
             }
