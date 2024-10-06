@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Add sticky class when scrolled past header
             function updateHeader() {
-                if (window.scrollY > banner.offsetHeight) {
+                if (window.scrollY > 5%) {
                     header.classList.add('fixed');
                     logo.src = stickySrc;
                 } else {
