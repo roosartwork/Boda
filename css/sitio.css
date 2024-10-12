@@ -1,0 +1,34 @@
+/* SITIO */
+body{
+    background-color: burlywood
+    ;
+}
+
+#restaurant{
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#restaurantImg{
+    box-shadow: -3em -4em 0 0 rgb(94, 53, 38);
+}
+
+#map{
+    box-shadow: 2em 3em 0 0 #faebd7;
+    height: 100%;
+    float: right;
+    margin-right: 5%;
+    margin-top: -28vh;
+}
+
+#cana{
+    padding: 2em;
+}
+
+#cana h1{
+    color: white;
+    text-shadow: -0.7px -0.7px 0 rgb(94, 53, 38), 0.7px -0.7px 0 rgb(94, 53, 38), -0.7px 0.7px 0 rgb(94, 53, 38), 0.7px 0.7px 0 rgb(94, 53, 38);
+    font-size: 300%;
+}

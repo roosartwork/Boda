@@ -1,0 +1,76 @@
+body{
+    position: relative;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: Impact;
+    color: grey;
+    font-size: 300%;
+    margin: 0;
+    text-align: center;
+    padding-top: 2%;
+    margin-bottom: -0.4em;
+}
+
+p{
+    font-size: small;
+    text-align: center;
+    padding-top: 0.5em;
+    font-style: italic;
+}
+
+h3{
+    font-size: large;
+    color: #686d20;
+}
+
+#formularios{
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+form ul li{
+    list-style: none;
+    padding: 0.5em;
+}
+
+.required:after {
+    content:"*";
+    color:rgb(255, 0, 170);
+    font-weight:200;
+}
+
+.text{
+    width: 100%;
+}
+
+#formTitles{
+    font-weight: bolder;
+}
+
+hr{
+    border-top: 4px dotted #686d20;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 0.3vh;
+    width: 50%;
+}
+
+button{
+    color: palevioletred;
+    font-weight: bold;
+    width: 10em;
+    border: 0;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-left: 46vw;
+}

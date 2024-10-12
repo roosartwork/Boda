@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+* {
+    font-size: 1em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    transition: all 0.3s ease;
+}
+
+#banner {
+    position: relative; /* Position relative to use pseudo-elements */
+    overflow: hidden; /* Hide any overflow from pseudo-elements */
+}
+
+#banner::before {
+    content: ''; /* Required for pseudo-element */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#3038384f, #3038384f), url(/img/header.jpg);
+    background-position-y: bottom;
+    filter: blur(3px); /* Adjust blur radius as needed */
+}
+
+#banner img {
+    position: relative; /* Ensure it's above the blurred background */
+    width: 50%;
+    display: block;
+    margin: auto;
+    padding-bottom: 0.5em;
+    z-index: 1; /* Ensure it appears above the blurred background */
+}
+
+    /* h1{
+        /* Text 
+        margin: 0;
+        color: transparent;
+        font-size: 750%;
+        text-align: center;
+        font-family: 'Sofia';
+        -webkit-background-clip: text;
+
+        /* Image 
+        height: 15vh;
+        background-image: url(/img/header.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: bottom;
+    } */
+
+    /* nav{
+        position: sticky;
+        top: 0;
+    } */
+
+    /* LOGO */
+
+        #title{
+            display: flex;
+            align-items:center;
+        }
+
+        #title img {
+            height: 5em;
+            z-index: 2
+        }
+
+        /*#title{
+            padding: 1vh;
+            text-decoration: none;
+            margin: -2vh;
+             text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
+             }
+             */
+        
+
+        /* #title p, #dos{
+            display: inline-block;
+            vertical-align: top;
+            padding: 1vh;
+        }
+
+        #title h1, #title p{
+            color: palevioletred;
+            margin: -1.3vh;
+        }
+
+        #title h1{
+            font-size: xx-large;
+        }
+
+        #title p{
+            padding: 1.6vh 1.5vh 0;
+            font-size: x-large;
+            transform: rotate(18deg);
+        } */
+    
+    /* NAVBAR */
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: whitesmoke;
+            padding: 0 2%;
+            height: 2.5em;
+        }
+
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            width: 60%;
+            margin: 0px;
+        }
+
+        nav ul a{
+            padding: 0 1%;
+            transform: skewX(-20deg);
+            text-decoration: none;
+            color: palevioletred;
+        }
+
+        nav ul a li{
+            font-size: large;
+            transform: skewX(20deg);
+            line-height: 2.2rem;
+        }
+
+        nav ul a:hover{
+            background-color: pink;
+            transition: all ease-in 500ms;
+            border-radius: 10px;
+            color:white;
+            font-weight: bolder;
+        }
+
+        nav ul a:hover li{
+            font-size: larger;
+            transition: all ease-in 500ms;
+        }
