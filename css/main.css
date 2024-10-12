@@ -1,0 +1,35 @@
+/* MAIN */
+
+body{
+    background-color: burlywood;
+}
+
+embed{
+    width: 100%;
+}
+
+main{
+    padding: 0 1em;
+}
+
+img{
+    width: 100%;
+}
+
+h1{
+    color: white;
+    text-shadow: -1px -1px 0 rgb(94, 53, 38), 1px -1px 0 rgb(94, 53, 38), -1px 1px 0 rgb(94, 53, 38), 1px 1px 0 rgb(94, 53, 38);
+    font-size: 300%;
+    display: flex;
+    justify-content: center;
+}
+
+.columns{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.columns p{
+    width: 40%;
+}

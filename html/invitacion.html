@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Dan y Alejandro</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/invitacion.css">
+    <script src="/js/invitacion.js"></script>
+    <script src="/js/header.js" defer></script>
+</head>
+<body>
+    <div id="menu"></div>
+    <main>
+        <p>— Los siguientes datos se usarán exclusivamente para reservar el vuelo y el alojamiento —</p>
+        <form>
+            <div id="formularios">
+                <ul id="invitade">
+                    <h3>Datos de la persona invitada</h3>
+                    <li>
+                        <label for="invName" id="formTitles" class="required">Nombre:</label><br>
+                        <input type="text" id="invName" class="text" aria-invalid="true" name="nombre invitade" required/>
+                    </li>
+                    <li>
+                        <label for="invSurnames" id="formTitles" class="required">Apellidos:</label><br>
+                        <input type="text" id="invSurnames" class="text" name="apellidos invitade" required/>
+                    </li>
+                    <li>
+                        <label for="invMain" id="formTitles" class="required">Correo electrónico:</label><br>
+                        <input type="email" id="invMain" class="text" name="mail invitade" required/>
+                    </li>
+                    <li>
+                        <label for="invTel" id="formTitles" class="required">Número de teléfono:</label><br>
+                        <input type="tel" id="invTel" class="text" name="telefono invitade" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11" required/>
+                    </li>
+                    <li>
+                        <label for="invDNI" id="formTitles" class="required">DNI/NIE:</label><br>
+                        <input type="text" id="invDNI" class="text" name="DNI invitade" pattern="[0-9]{8}-[A-Z]" maxlength="10" required/>
+                    <li>
+                        <label for="invWA" id="formTitles" class="required">¿Consientes que se te añada a un grupo de WhatsApp?</label><br>
+                        <input type="radio" class="invWA" name="WA invitade" value="Sí">Sí
+                        <input type="radio" class="invWA" name="WA invitade" value="No" required/>No
+                    </li>
+                    <li>
+                        <label for="invFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
+                        <div class="options">
+                            <input type="checkbox" class="invFood" name="food" value="Carne">Carne
+                            <input type="checkbox" class="invFood" name="food" value="Pescado">Pescado
+                            <input type="checkbox" class="invFood" name="food" value="Huevos">Huevos
+                            <input type="checkbox" class="invFood" name="food" value="Lácteos">Lácteos
+                        </div>
+                        <div class="options">
+                            <input type="checkbox" class="invFood" name="food" value="Gluten">Gluten
+                            <input type="checkbox" class="invFood" name="food" value="Marisco">Marisco
+                            <input type="checkbox" class="invFood" name="food" value="Frutos secos">Frutos secos
+                            <input type="checkbox" class="invFood" name="food" value="Otros" id="otrosInv">Otros
+                            <br>
+                            <input type="text" class="text" id="allergiesInv" name="food" disabled>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="invWA" id="formTitles" class="required">¿Compartiréis cama?</label><br>
+                        <input type="radio" class="invWA" name="WA invitade" value="Sí">Sí
+                        <input type="radio" class="invWA" name="WA invitade" value="No" required/>No
+                    </li>
+                </ul>
+    
+                <ul id="plus">
+                    <h3>Datos de la persona acompañante</h3>
+                    <li>
+                        <label for="plusName" id="formTitles">Nombre:</label><br>
+                        <input type="text" id="plusName" class="text" aria-invalid="true" name="nombre acompañante"/>
+                    </li>
+                    <li>
+                        <label for="plusSurnames" id="formTitles">Apellidos:</label><br>
+                        <input type="text" id="plusSurnames" class="text" name="apellidos acompañante"/>
+                    </li>
+                    <li>
+                        <label for="plusMain" id="formTitles">Correo electrónico:</label><br>
+                        <input type="email" id="plusMain" class="text" name="mail acompañante"/>
+                    </li>
+                    <li>
+                        <label for="plusTel" id="formTitles">Número de teléfono:</label><br>
+                        <input type="tel" id="plusTel" class="text" name="telefono acompañante" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11"/>
+                    </li>
+                    <li>
+                        <label for="plusWA" id="formTitles">¿Consientes que se te añada a un grupo de WhatsApp?</label><br>
+                        <input type="radio" class="plusWA" name="WA acompañante" value="Sí">Sí
+                        <input type="radio" class="plusWA" name="WA acompañante" value="No"/>No
+                    </li>
+                    <li>
+                        <label for="invFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
+                        <div class="options">
+                            <input type="checkbox" class="plusFood" name="food" value="Carne">Carne
+                            <input type="checkbox" class="plusFood" name="food" value="Pescado">Pescado
+                            <input type="checkbox" class="plusFood" name="food" value="Huevos">Huevos
+                            <input type="checkbox" class="plusFood" name="food" value="Lácteos">Lácteos
+                        </div>
+                        <div class="options">
+                            <input type="checkbox" class="plusFood" name="food" value="Gluten">Gluten
+                            <input type="checkbox" class="plusFood" name="food" value="Marisco">Marisco
+                            <input type="checkbox" class="plusFood" name="food" value="Frutos secos">Frutos secos
+                            <input type="checkbox" class="plusFood" name="food" value="Otros" id="otrosPlus">Otros
+                            <br>
+                            <input type="text" class="text" id="allergiesPlus" name="food" disabled>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <hr>                     
+            <button type="submit">Post</button>
+
+
+        </form>
+          
+        <!-- <iframe class="formape-iframe"    width="100%"     allowtransparency="true"     allowfullscreen="true"    frameborder="0"     title="Untitled form"    height="1366"    id="formape-edknn"    src="https://www.formape.com/f/edknn"></iframe> -->
+    </main>
+</body>
+</html>
