@@ -19,7 +19,7 @@ h1{
 .columns{
     display: flex;
     justify-content: space-around;
-    padding: 3% 0 1.5em 0;
+    padding: 3% 0 1.5% 0;
 }
 
 .columns div{
@@ -31,10 +31,10 @@ ul{
 }
 
 #smiley{
-    width: 3em;
+    width: 7%;
     vertical-align: middle;
-    padding-bottom: 1em;
-    padding-left: 0.3em;
+    padding-bottom: 1%;
+    padding-left: 0.3%;
 }
 
 #collection{
@@ -43,22 +43,22 @@ ul{
 }
 
 #collection img{
-    width: 23em;
+    width: 19%;
 }
 
 #extrapic{
     display: flex;
     justify-content: center;
-    padding-top: 2em;
+    padding-top: 2%;
 }
 
 #extrapic img{
-    width: 23em;
+    width: 19%;
 }
 
 p{
     display: flex;
     justify-content: center;
-    font-size: 0.9em;
+    font-size: 90%;
     margin-top: 5px;
 }
