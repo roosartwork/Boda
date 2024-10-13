@@ -10,8 +10,11 @@ body {
 }
 
 /* HEADER */
-header {
-    transition: all 0.3s ease;
+.sticky{
+    position: fixed;
+    top: 0.3%;
+    width: 100%;
+    z-index: 2;
 }
 
 #banner {
