@@ -24,7 +24,7 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(#3038384f, #3038384f), url(/img/header.jpg);
+    background-image: linear-gradient(#3038384f, #3038384f), url(../img/header.jpg);
     background-position-y: bottom;
     filter: blur(3px); /* Adjust blur radius as needed */
 }
