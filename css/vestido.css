@@ -1,0 +1,17 @@
+body{
+    background-color: burlywood;
+}
+
+h1{
+    font-family: Impact;
+    color: white;
+    font-size: 300%;
+    margin: 0;
+    text-align: center;
+    margin-bottom: -0.4em;
+    text-shadow: -1px -1px 0 rgb(94, 53, 38), 1px -1px 0 rgb(94, 53, 38), -1px 1px 0 rgb(94, 53, 38), 1px 1px 0 rgb(94, 53, 38);
+}
+
+#parrafo{
+    width: 50%;
+}
