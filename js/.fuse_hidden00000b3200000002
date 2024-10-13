@@ -1,0 +1,135 @@
+    // Format of the telephone number
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get both input elements by their IDs
+        const phoneInputs = document.querySelectorAll('#invTel, #plusTel');
+
+        // Iterate through each phone input element and add an event listener
+        phoneInputs.forEach(function(phoneInput) {
+            phoneInput.addEventListener('input', function(event) {
+                let input = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+                if (input.length > 6) {
+                    phoneInput.value = `${input.slice(0, 3)}-${input.slice(3, 6)}-${input.slice(6, 9)}`;
+                } else if (input.length > 3) {
+                    phoneInput.value = `${input.slice(0, 3)}-${input.slice(3, 6)}`;
+                } else {
+                    phoneInput.value = input;
+                }
+            });
+        });
+    });
+
+
+
+// DNI
+document.addEventListener('DOMContentLoaded', function() {
+    const dniInput = document.getElementById('invDNI');
+
+    // Function to format the DNI/NIE input
+    function formatDNI(value) {
+        // Remove all non-numeric and non-letter characters
+        value = value.replace(/[^0-9]/g, ''); // Only keep digits
+        
+        // Ensure that we only take up to the first 8 digits
+         const numbers = value.slice(0, 8);
+
+         // Add the letter part only if it is valid
+         let letter = ''; // Default to empty
+         if (numbers.length > 8) {
+             letter = value.charAt((/[^a-zA-Z]/g, '')).toUpperCase(); // Get the 9th character and make it uppercase
+             // Check if the letter is valid (A-Z)
+             if (!/^[A-Za-z]$/.test(letter)) {
+                 letter = ''; // If not a valid letter, discard it
+             }
+         }
+
+        // Construct the formatted value
+        let formattedValue = numbers
+        if (numbers.length === 8) {
+            formattedValue += '-' + letter;
+        }
+
+        return formattedValue;
+    }
+
+    // Handle input event
+    dniInput.addEventListener('input', function(event) {
+        let inputValue = dniInput.value;
+        
+        // Format the value according to the rules
+        dniInput.value = formatDNI(inputValue);
+    });
+
+    // Handle paste event to ensure correct formatting
+    dniInput.addEventListener('paste', function(event) {
+        setTimeout(function() {
+            let inputValue = dniInput.value;
+            dniInput.value = formatDNI(inputValue);
+        }, 0);
+    });
+
+    // Handle keydown event to restrict input to digits and letters
+    dniInput.addEventListener('keydown', function(event) {
+        // Allow navigation keys and basic editing keys
+        const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
+        // If key is allowed, digit, or a letter (case insensitive), allow it
+    if (allowedKeys.includes(key) || /^[a-zA-Z0-9]$/.test(key)) {
+        return; // Allow input
+    }
+
+    // If none of the conditions are met, prevent the input
+    event.preventDefault();
+    });
+
+    // Handle keyup event to ensure the correct character limit
+    dniInput.addEventListener('keyup', function(event) {
+        const value = dniInput.value;
+        if (value.length > 10) {
+            dniInput.value = value.slice(0, 10); // Limit input to 10 characters (8 digits + 1 hyphen + 1 letter)
+        }
+    });
+});
+
+
+
+
+
+
+
+// food text field greyed out - INVITADO
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the checkbox and text input elements
+        const otrosCheckbox1 = document.getElementById('otrosInv');
+        const allergiesInput1 = document.getElementById('allergiesInv');
+
+        // Check if the elements exist before adding the event listener
+        if (otrosCheckbox1 && allergiesInput1) {
+            // Add an event listener to toggle the text input's disabled state
+            otrosCheckbox1.addEventListener('change', function() {
+                if (otrosCheckbox1.checked) {
+                    allergiesInput1.disabled = false;
+                } else {
+                    allergiesInput1.disabled = true;
+                }
+            });
+        }
+    });
+
+
+// food text field greyed out - PLUS
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the checkbox and text input elements
+        const otrosCheckbox2 = document.getElementById('otrosPlus');
+        const allergiesInput2 = document.getElementById('allergiesPlus');
+
+        // Check if the elements exist before adding the event listener
+        if (otrosCheckbox2 && allergiesInput2) {
+            // Add an event listener to toggle the text input's disabled state
+            otrosCheckbox2.addEventListener('change', function() {
+                if (otrosCheckbox2.checked) {
+                    allergiesInput2.disabled = false;
+                } else {
+                    allergiesInput2.disabled = true;
+                }
+            });
+        }
+    });
