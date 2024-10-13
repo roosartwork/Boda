@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!header || !logo) return;
 
-            const originalSrc = '/logo/logoTight.png';
-            const stickySrc = '/logo/logoSimplified.png';
+            const originalSrc = '../logo/logoTight.png';
+            const stickySrc = '../logo/logoSimplified.png';
 
             // Add sticky class when scrolled past header
             function updateHeader() {
