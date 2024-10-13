@@ -2,6 +2,10 @@ body{
     background-color: burlywood;
 }
 
+main{
+    padding: 0 1em;
+}
+
 h1{
     font-family: Impact;
     color: white;
@@ -12,6 +16,21 @@ h1{
     text-shadow: -1px -1px 0 rgb(94, 53, 38), 1px -1px 0 rgb(94, 53, 38), -1px 1px 0 rgb(94, 53, 38), 1px 1px 0 rgb(94, 53, 38);
 }
 
-#parrafo{
-    width: 50%;
+.columns{
+    display: flex;
+    justify-content: space-around;
+    padding: 3%;
+}
+
+.columns div{
+    width: 40%;
+}
+
+ul{
+    list-style: circle;
+}
+
+#smiley{
+    width: 4em;
+    
 }
