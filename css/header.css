@@ -19,7 +19,7 @@ header {
     overflow: hidden; /* Hide any overflow from pseudo-elements */
 }
 
-#banner:before{
+#banner::before{
     content: ''; /* Required for pseudo-element */
     position: absolute;
     width: 100%;
