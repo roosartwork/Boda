@@ -20,7 +20,7 @@ header {
 }
 
 #banner::before{
-    content: ''; /* Required for pseudo-element */
+    content: ""; /* Required for pseudo-element */
     position: absolute;
     width: 100%;
     height: 100%;
