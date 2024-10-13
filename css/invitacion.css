@@ -73,4 +73,5 @@ button{
     border-radius: 10px;
     margin: 0 auto;
     margin-left: 46vw;
+    cursor: pointer;
 }

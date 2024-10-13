@@ -13,7 +13,10 @@
     <div id="menu"></div>
     <main>
         <p>— Los siguientes datos se usarán exclusivamente para reservar el vuelo y el alojamiento —</p>
-        <form>
+        <form action="mailto:uriosma@hotmail.com"
+        method="POST"
+        enctype="multipart/form-data"
+        name="Invitades">
             <div id="formularios">
                 <ul id="invitade">
                     <h3>Datos de la persona invitada</h3>
@@ -36,6 +39,7 @@
                     <li>
                         <label for="invDNI" id="formTitles" class="required">DNI/NIE:</label><br>
                         <input type="text" id="invDNI" class="text" name="DNI invitade" pattern="[0-9]{8}-[A-Z]" maxlength="10" required/>
+                    </li>
                     <li>
                         <label for="invWA" id="formTitles" class="required">¿Consientes que se te añada a un grupo de WhatsApp?</label><br>
                         <input type="radio" class="invWA" name="WA invitade" value="Sí">Sí
@@ -44,14 +48,9 @@
                     <li>
                         <label for="invFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
                         <div class="options">
-                            <input type="checkbox" class="invFood" name="food" value="Carne">Carne
-                            <input type="checkbox" class="invFood" name="food" value="Pescado">Pescado
                             <input type="checkbox" class="invFood" name="food" value="Huevos">Huevos
                             <input type="checkbox" class="invFood" name="food" value="Lácteos">Lácteos
-                        </div>
-                        <div class="options">
                             <input type="checkbox" class="invFood" name="food" value="Gluten">Gluten
-                            <input type="checkbox" class="invFood" name="food" value="Marisco">Marisco
                             <input type="checkbox" class="invFood" name="food" value="Frutos secos">Frutos secos
                             <input type="checkbox" class="invFood" name="food" value="Otros" id="otrosInv">Otros
                             <br>
@@ -62,6 +61,7 @@
                         <label for="invWA" id="formTitles" class="required">¿Compartiréis cama?</label><br>
                         <input type="radio" class="invWA" name="WA invitade" value="Sí">Sí
                         <input type="radio" class="invWA" name="WA invitade" value="No" required/>No
+                        <input type="radio" class="invWA" name="WA invitade" value="NA" required/>Solo estoy yo
                     </li>
                 </ul>
     
@@ -84,21 +84,20 @@
                         <input type="tel" id="plusTel" class="text" name="telefono acompañante" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11"/>
                     </li>
                     <li>
+                        <label for="plusDNI" id="formTitles">DNI/NIE:</label><br>
+                        <input type="text" id="plusDNI" class="text" name="DNI acompañante" pattern="[0-9]{8}-[A-Z]" maxlength="10"/>
+                    </li>
+                    <li>
                         <label for="plusWA" id="formTitles">¿Consientes que se te añada a un grupo de WhatsApp?</label><br>
                         <input type="radio" class="plusWA" name="WA acompañante" value="Sí">Sí
                         <input type="radio" class="plusWA" name="WA acompañante" value="No"/>No
-                    </li>
+                    </li>                   
                     <li>
-                        <label for="invFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
+                        <label for="plusFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
                         <div class="options">
-                            <input type="checkbox" class="plusFood" name="food" value="Carne">Carne
-                            <input type="checkbox" class="plusFood" name="food" value="Pescado">Pescado
                             <input type="checkbox" class="plusFood" name="food" value="Huevos">Huevos
-                            <input type="checkbox" class="plusFood" name="food" value="Lácteos">Lácteos
-                        </div>
-                        <div class="options">
+                            <input type="checkbox" class="plusFood" name="food" value="Lácteos">Lácteos                        
                             <input type="checkbox" class="plusFood" name="food" value="Gluten">Gluten
-                            <input type="checkbox" class="plusFood" name="food" value="Marisco">Marisco
                             <input type="checkbox" class="plusFood" name="food" value="Frutos secos">Frutos secos
                             <input type="checkbox" class="plusFood" name="food" value="Otros" id="otrosPlus">Otros
                             <br>
@@ -108,7 +107,7 @@
                 </ul>
             </div>
         <hr>                     
-            <button type="submit">Post</button>
+            <button type="submit" value="Send">Post</button>
 
 
         </form>
