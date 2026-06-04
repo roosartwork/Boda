@@ -26,12 +26,20 @@ main{
 #card h1{
     font-family: Impact;
     color: burlywood;
-    font-size: 300%;
+    font-size: 3em;
     align-self: center;
     margin: 0;
 }
 
-.yt-container{
+#spotify{
+    width: 45%;
+    border-radius:12px;
+    padding: 3%;
+    border-color: black;
+    border-style: double;
+}
+
+/*.yt-container{
     display: flex;
     flex-direction: column;
     padding-top: 1em 0;

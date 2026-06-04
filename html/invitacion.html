@@ -9,110 +9,123 @@
     <script src="../js/invitacion.js"></script>
     <script src="../js/header.js" defer></script>
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <body>
     <div id="menu"></div>
     <main>
-        <p>— Los siguientes datos se usarán exclusivamente para reservar el vuelo y el alojamiento —</p>
-        <form action="mailto:uriosma@hotmail.com"
-        method="POST"
-        enctype="multipart/form-data"
-        name="Invitades">
+        <p>— Los siguientes datos se usarán exclusivamente para reservar el viaje y el alojamiento —</p>
+        <label id="plusButtonTitle">
+            
+        </label>
+        <form id="weddingForm"
+            method="POST"
+            enctype="text/plain"
+            name="Invitades">
             <div id="formularios">
                 <ul id="invitade">
-                    <h3>Datos de la persona invitada</h3>
+                    <div id="datosTitle">
+                        <h3>Datos de la persona invitada</h3>
+                        <label id="plusButtonTitle">
+                            <input type="checkbox" id="plusButton" name="plusButton" value="plusOne">Traigo acompañante
+                        </label>
+                    </div>
                     <li>
-                        <label for="invName" id="formTitles" class="required">Nombre:</label><br>
-                        <input type="text" id="invName" class="text" aria-invalid="true" name="nombre invitade" required/>
+                        <label for="invName"  id="formTitles" class="required">Nombre:</label><br>
+                        <input type="text" id="invName" name="invName" class="text" aria-invalid="true" required/>
                     </li>
                     <li>
-                        <label for="invSurnames" id="formTitles" class="required">Apellidos:</label><br>
-                        <input type="text" id="invSurnames" class="text" name="apellidos invitade" required/>
+                        <label for="invSurnames"  id="formTitles" class="required">Apellidos:</label><br>
+                        <input type="text" id="invSurnames" name="invSurnames" class="text" required/>
                     </li>
                     <li>
-                        <label for="invMain" id="formTitles" class="required">Correo electrónico:</label><br>
-                        <input type="email" id="invMain" class="text" name="mail invitade" required/>
+                        <label for="invMail" id="formTitles" class="required">Correo electrónico:</label><br>
+                        <input type="email" id="invMail" name="invMail" class="text" required/>
                     </li>
                     <li>
                         <label for="invTel" id="formTitles" class="required">Número de teléfono:</label><br>
-                        <input type="tel" id="invTel" class="text" name="telefono invitade" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11" required/>
+                        <input type="tel" id="invTel" name="invTel" class="text"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11" required/>
                     </li>
                     <li>
                         <label for="invDNI" id="formTitles" class="required">DNI/NIE:</label><br>
-                        <input type="text" id="invDNI" class="text" name="DNI invitade" pattern="[0-9]{8}-[A-Z]" maxlength="10" required/>
+                        <input type="text" id="invDNI" name="invDNI" class="text"  pattern="[0-9]{8}-[A-Z]" maxlength="10" required/>
                     </li>
                     <li>
                         <label for="invWA" id="formTitles" class="required">¿Consientes que se te añada a un grupo de WhatsApp?</label><br>
-                        <input type="radio" class="invWA" name="WA invitade" value="Sí">Sí
-                        <input type="radio" class="invWA" name="WA invitade" value="No" required/>No
+                        <input type="radio" class="invWA"  name="invWA" value="Sí">Sí
+                        <input type="radio" class="invWA"  name="invWA" value="No" required/>No
                     </li>
                     <li>
-                        <label for="invFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
+                        <label for="invFood" name="invFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
                         <div class="options">
-                            <input type="checkbox" class="invFood" name="food" value="Huevos">Huevos
-                            <input type="checkbox" class="invFood" name="food" value="Lácteos">Lácteos
-                            <input type="checkbox" class="invFood" name="food" value="Gluten">Gluten
-                            <input type="checkbox" class="invFood" name="food" value="Frutos secos">Frutos secos
-                            <input type="checkbox" class="invFood" name="food" value="Otros" id="otrosInv">Otros
+                            <input type="checkbox" class="invFood" name="invFood" value="Huevos">Huevos
+                            <input type="checkbox" class="invFood" name="invFood" value="Lacteos">Lácteos
+                            <input type="checkbox" class="invFood" name="invFood" value="Gluten">Gluten
+                            <input type="checkbox" class="invFood" name="invFood" value="Frutos secos">Frutos secos
+                            <input type="checkbox" class="invFood" value="Otros" id="otrosInv">Otros
                             <br>
-                            <input type="text" class="text" id="allergiesInv" name="food" disabled>
+                            <input type="text" class="text" id="allergiesInv" name="invFood" disabled>
                         </div>
                     </li>
-                    <li>
-                        <label for="invWA" id="formTitles" class="required">¿Compartiréis cama?</label><br>
-                        <input type="radio" class="invWA" name="WA invitade" value="Sí">Sí
-                        <input type="radio" class="invWA" name="WA invitade" value="No" required/>No
-                        <input type="radio" class="invWA" name="WA invitade" value="NA" required/>Solo estoy yo
-                    </li>
                 </ul>
-    
+
                 <ul id="plus">
                     <h3>Datos de la persona acompañante</h3>
                     <li>
                         <label for="plusName" id="formTitles">Nombre:</label><br>
-                        <input type="text" id="plusName" class="text" aria-invalid="true" name="nombre acompañante"/>
+                        <input type="text" id="plusName" name="plusName" class="text" aria-invalid="true"/>
                     </li>
                     <li>
-                        <label for="plusSurnames" id="formTitles">Apellidos:</label><br>
-                        <input type="text" id="plusSurnames" class="text" name="apellidos acompañante"/>
+                        <label for="plusSurnames"id="formTitles">Apellidos:</label><br>
+                        <input type="text" name="plusSurnames" id="plusSurnames" class="text"/>
                     </li>
                     <li>
-                        <label for="plusMain" id="formTitles">Correo electrónico:</label><br>
-                        <input type="email" id="plusMain" class="text" name="mail acompañante"/>
+                        <label for="plusMail"  id="formTitles">Correo electrónico:</label><br>
+                        <input type="email" name="plusMail" id="plusMail" class="text"/>
                     </li>
                     <li>
                         <label for="plusTel" id="formTitles">Número de teléfono:</label><br>
-                        <input type="tel" id="plusTel" class="text" name="telefono acompañante" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11"/>
+                        <input type="tel" id="plusTel" name="plusTel" class="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11"/>
                     </li>
                     <li>
                         <label for="plusDNI" id="formTitles">DNI/NIE:</label><br>
-                        <input type="text" id="plusDNI" class="text" name="DNI acompañante" pattern="[0-9]{8}-[A-Z]" maxlength="10"/>
+                        <input type="text" id="plusDNI" name="plusDNI" class="text" pattern="[0-9]{8}-[A-Z]" maxlength="10"/>
                     </li>
                     <li>
                         <label for="plusWA" id="formTitles">¿Consientes que se te añada a un grupo de WhatsApp?</label><br>
-                        <input type="radio" class="plusWA" name="WA acompañante" value="Sí">Sí
-                        <input type="radio" class="plusWA" name="WA acompañante" value="No"/>No
-                    </li>                   
+                        <input type="radio" class="plusWA" name="plusWA" value="Sí">Sí
+                        <input type="radio" class="plusWA" name="plusWA" value="No"/>No
+                    </li>
                     <li>
                         <label for="plusFood" id="formTitles">¿Hay alguno de los siguientes alimentos que no puedas/quieras comer?</label>
                         <div class="options">
-                            <input type="checkbox" class="plusFood" name="food" value="Huevos">Huevos
-                            <input type="checkbox" class="plusFood" name="food" value="Lácteos">Lácteos                        
-                            <input type="checkbox" class="plusFood" name="food" value="Gluten">Gluten
-                            <input type="checkbox" class="plusFood" name="food" value="Frutos secos">Frutos secos
-                            <input type="checkbox" class="plusFood" name="food" value="Otros" id="otrosPlus">Otros
+                            <input type="checkbox" class="plusFood" name="plusFood" value="Huevos">Huevos
+                            <input type="checkbox" class="plusFood" name="plusFood" value="Lácteos">Lácteos                        
+                            <input type="checkbox" class="plusFood" name="plusFood" value="Gluten">Gluten
+                            <input type="checkbox" class="plusFood" name="plusFood" value="Frutos secos">Frutos secos
+                            <input type="checkbox" class="plusFood" value="Otros" id="otrosPlus">Otros
                             <br>
-                            <input type="text" class="text" id="allergiesPlus" name="food" disabled>
+                            <input type="text" class="text" id="allergiesPlus" name="plusFood" disabled>
                         </div>
+                    </li>
+                    <li>
+                        <label for="invWA" id="formTitles">¿Compartiréis cama?</label><br>
+                        <input type="radio" class="invWA" name="invBed" id="invBed" name="invBed"value="Sí">Sí
+                        <input type="radio" class="invWA" name="invBed" id="invBed" name="invBed"value="No"/>No
                     </li>
                 </ul>
             </div>
         <hr>                     
-            <button type="submit" value="Send">Post</button>
+            <button type="submit" value="Send">Enviar</button>
 
 
         </form>
           
         <!-- <iframe class="formape-iframe"    width="100%"     allowtransparency="true"     allowfullscreen="true"    frameborder="0"     title="Untitled form"    height="1366"    id="formape-edknn"    src="https://www.formape.com/f/edknn"></iframe> -->
     </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 </body>
 </html>

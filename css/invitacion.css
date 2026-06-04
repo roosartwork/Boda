@@ -1,8 +1,11 @@
 body{
-    position: relative;
     background-color: burlywood;
+}
+
+main{
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 h1{
@@ -32,7 +35,22 @@ h3{
     justify-content: space-around;
 }
 
-ul{
+#plusDNI{
+    text-transform: uppercase;
+}
+
+#plusButtonTitle{
+    font-style: oblique;
+    color: darkmagenta;
+}
+
+#datosTitle{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+form ul{
     margin: 0;
     padding: 0;
 }
@@ -74,4 +92,49 @@ button{
     margin: 0 auto;
     margin-left: 46vw;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: linear-gradient(pink 45%, palevioletred);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h3{
+    font-size: 1.3em;
+}
+
+
+@media screen and (max-width: 1090px) {
+
+    #formularios{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1.5em 0 1em;
+    }
+
+    #plus{
+        padding-top: 2em;
+    }
+
 }

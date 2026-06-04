@@ -1,126 +1,140 @@
-    // Format of the telephone number
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get both input elements by their IDs
-        const phoneInputs = document.querySelectorAll('#invTel, #plusTel');
+document.addEventListener('DOMContentLoaded', () => {
 
-        // Iterate through each phone input element and add an event listener
-        phoneInputs.forEach(function(phoneInput) {
-            phoneInput.addEventListener('input', function(event) {
-                let input = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
-                if (input.length > 6) {
-                    phoneInput.value = `${input.slice(0, 3)}-${input.slice(3, 6)}-${input.slice(6, 9)}`;
-                } else if (input.length > 3) {
-                    phoneInput.value = `${input.slice(0, 3)}-${input.slice(3, 6)}`;
-                } else {
-                    phoneInput.value = input;
-                }
-            });
+    emailjs.init('vVVghaHe4N74sUCBO');
+
+    const form = document.getElementById('weddingForm');
+    const modal = document.getElementById('successModal');
+    const closeBtn = document.getElementById('closeModal');
+    const plusForm = document.getElementById('plus');
+    const plusButton = document.getElementById('plusButton');
+
+    const phoneInputs = document.querySelectorAll('#invTel, #plusTel');
+
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            let value = input.value.replace(/\D/g, '');
+
+            if (value.length > 6) {
+                input.value = `${value.slice(0,3)}-${value.slice(3,6)}-${value.slice(6,9)}`;
+            } else if (value.length > 3) {
+                input.value = `${value.slice(0,3)}-${value.slice(3,6)}`;
+            } else {
+                input.value = value;
+            }
         });
     });
 
+    const dniInputs = document.querySelectorAll('#invDNI, #plusDNI');
 
+dniInputs.forEach(input => {
 
-// DNI
-document.addEventListener('DOMContentLoaded', function() {
-    const dniInput = document.getElementById('invDNI');
+    const format = (value) => {
 
-    // Function to format the DNI/NIE input
-    function formatDNI(value) {
-        // Remove all non-numeric and non-letter characters
-        value = value.replace(/[^0-9A-Z]/g, '');
+        value = value.toUpperCase().replace(/[^0-9A-Z]/g, '');
 
-        // Split the input into numbers and letter
-        const numbers = value.slice(0, 8);
-        const letter = value.slice(8, 9).toUpperCase(); // Ensure the letter is uppercase
+        const numbers = value.slice(0, 8).replace(/\D/g, '');
+        const letter = value.slice(8, 9).replace(/[^A-Z]/g, '');
 
-        // Construct the formatted value
-        let formattedValue = numbers;
-        if (numbers.length === 8) {
-            formattedValue += '-' + letter;
-        }
+        return letter ? `${numbers}-${letter}` : numbers;
+    };
 
-        return formattedValue;
-    }
-
-    // Handle input event
-    dniInput.addEventListener('input', function(event) {
-        let inputValue = dniInput.value;
-        
-        // Format the value according to the rules
-        dniInput.value = formatDNI(inputValue);
+    input.addEventListener('input', () => {
+        input.value = format(input.value);
     });
 
-    // Handle paste event to ensure correct formatting
-    dniInput.addEventListener('paste', function(event) {
-        setTimeout(function() {
-            let inputValue = dniInput.value;
-            dniInput.value = formatDNI(inputValue);
+    input.addEventListener('paste', () => {
+        setTimeout(() => {
+            input.value = format(input.value);
         }, 0);
     });
 
-    // Handle keydown event to restrict input to digits and letters
-    dniInput.addEventListener('keydown', function(event) {
-        // Allow navigation keys and basic editing keys
-        const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
-        if (allowedKeys.indexOf(event.key) > -1 ||
-            (event.key >= '0' && event.key <= '9') ||
-            (event.key >= 'A' && event.key <= 'Z')) {
-            return;
-        } else {
-            event.preventDefault();
-        }
-    });
-
-    // Handle keyup event to ensure the correct character limit
-    dniInput.addEventListener('keyup', function(event) {
-        const value = dniInput.value;
-        if (value.length > 10) {
-            dniInput.value = value.slice(0, 10); // Limit input to 10 characters (8 digits + 1 hyphen + 1 letter)
-        }
-    });
 });
 
+    const toggleInput = (checkboxId, inputId) => {
+        const checkbox = document.getElementById(checkboxId);
+        const input = document.getElementById(inputId);
 
+        if (!checkbox || !input) return;
 
+        input.disabled = true;
 
+        checkbox.addEventListener('change', () => {
+            input.disabled = !checkbox.checked;
 
+            if (!checkbox.checked) {
+                input.value = '';
+            }
+        });
+    };
 
+    toggleInput('otrosInv', 'allergiesInv');
+    toggleInput('otrosPlus', 'allergiesPlus');
 
-// food text field greyed out - INVITADO
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get the checkbox and text input elements
-        const otrosCheckbox1 = document.getElementById('otrosInv');
-        const allergiesInput1 = document.getElementById('allergiesInv');
+    if (plusButton && plusForm) {
 
-        // Check if the elements exist before adding the event listener
-        if (otrosCheckbox1 && allergiesInput1) {
-            // Add an event listener to toggle the text input's disabled state
-            otrosCheckbox1.addEventListener('change', function() {
-                if (otrosCheckbox1.checked) {
-                    allergiesInput1.disabled = false;
-                } else {
-                    allergiesInput1.disabled = true;
-                }
-            });
-        }
-    });
+        plusForm.hidden = true;
 
+        plusButton.addEventListener('change', () => {
+            plusForm.hidden = !plusButton.checked;
 
-// food text field greyed out - PLUS
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get the checkbox and text input elements
-        const otrosCheckbox2 = document.getElementById('otrosPlus');
-        const allergiesInput2 = document.getElementById('allergiesPlus');
+            if (!plusButton.checked) {
 
-        // Check if the elements exist before adding the event listener
-        if (otrosCheckbox2 && allergiesInput2) {
-            // Add an event listener to toggle the text input's disabled state
-            otrosCheckbox2.addEventListener('change', function() {
-                if (otrosCheckbox2.checked) {
-                    allergiesInput2.disabled = false;
-                } else {
-                    allergiesInput2.disabled = true;
-                }
-            });
-        }
-    });
+                plusForm.querySelectorAll('input').forEach(input => {
+
+                    if (input.type === 'text' || input.type === 'email' || input.type === 'tel') {
+                        input.value = '';
+                    }
+
+                    if (input.type === 'checkbox' || input.type === 'radio') {
+                        input.checked = false;
+                    }
+
+                });
+
+                const allergiesPlus = document.getElementById('allergiesPlus');
+                if (allergiesPlus) allergiesPlus.disabled = true;
+            }
+        });
+
+    }
+
+    const redirect = () => {
+        window.location.href = "main.html";
+    };
+
+    if (modal && closeBtn) {
+
+        closeBtn.addEventListener('click', redirect);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) redirect();
+        });
+
+    }
+
+    if (form) {
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            emailjs.sendForm('service_wobzoth', 'template_w1chqd3', form)
+                .then(() => {
+
+                    form.reset();
+
+                    if (plusForm) plusForm.hidden = true;
+
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                    }
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        });
+
+    }
+
+});
