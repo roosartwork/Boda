@@ -1,3 +1,5 @@
+console.log("JavaScript loaded");
+
 document.addEventListener("DOMContentLoaded", function () {
 
     fetch("header.html")
