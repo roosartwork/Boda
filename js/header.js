@@ -2,7 +2,7 @@ console.log("JavaScript loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    fetch("/html/header.html")
+    fetch("/header.html")
         .then(response => response.text())
         .then(data => {
 
@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const header = document.getElementById("header");
             const logo = document.getElementById("logo");
             const banner = document.getElementById("banner");
-
+            const overlay = document.getElementById("overlay");
             const hamburger = document.getElementById("hamburger");
             const navLinks = document.getElementById("nav-links");
 
             if (!header || !logo || !banner) return;
 
-            const originalSrc = "../logo/logoTight.png";
-            const stickySrc = "../logo/logoSimplified.png";
+            const originalSrc = "/logo/logoTight.png";
+            const stickySrc = "/logo/logoSimplified.png";
 
             // Sticky header + logo swap
             function updateHeader() {
@@ -45,12 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
             if (hamburger && navLinks) {
 
                 hamburger.addEventListener("click", () => {
-                    navLinks.classList.toggle("active");
-                    hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+                hamburger.classList.toggle("active");
+
+                if (overlay) {
+                    overlay.classList.toggle("active");
+                    }
                 });
             }
 
         })
+
         .catch(error => console.error("Error loading header:", error));
 
 });

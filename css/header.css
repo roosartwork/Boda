@@ -9,6 +9,11 @@ body {
     padding: 0;
 }
 
+#header {
+    position: relative;
+    z-index: 10;
+}
+
 /* HEADER */
 .sticky{
     position: fixed;
@@ -49,6 +54,7 @@ body {
 #banner {
     position: relative; /* Position relative to use pseudo-elements */
     overflow: hidden; /* Hide any overflow from pseudo-elements */
+    z-index: 5;
 }
 
 #banner::before{
@@ -56,7 +62,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(#3038384f, #3038384f), url(../img/header.jpg);
+    background-image: linear-gradient(#18412da1, #3038384f), url(../img/header.jpg);
     background-position-y: bottom;
     filter: blur(3px); /* Adjust blur radius as needed */
 }
@@ -67,7 +73,7 @@ body {
     display: block;
     margin: auto;
     padding-bottom: 0.5em;
-    z-index: 1; /* Ensure it appears above the blurred background */
+    z-index: 5; /* Ensure it appears above the blurred background */
 }
 
     /* h1{
@@ -171,6 +177,7 @@ body {
             border-radius: 10px;
             color:white;
             font-weight: bolder;
+            text-shadow: 0px 0px 14px rgb(182, 26, 86);
         }
 
         nav ul a:hover li{
@@ -208,6 +215,7 @@ body {
     nav ul {
         flex-direction: column;
         align-items: center;
+        z-index: 5;
 
         position: absolute;
         top: 100%;
@@ -228,7 +236,7 @@ body {
                     opacity 0.25s ease,
                     transform 0.25s ease;
     }
-
+    
     nav ul.active {
         max-height: 500px; /* enough to contain items */
         opacity: 1;
@@ -252,5 +260,20 @@ body {
         border-radius: 15px;
         color:white;
         font-weight: bolder;
+    }
+
+    #overlay{
+        position: fixed;
+        inset: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 4;
+        background: #243b1199;
+    }
+
+    #overlay.active {
+        opacity: 1;
+        pointer-events: all;
     }
 }
