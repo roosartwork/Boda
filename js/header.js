@@ -2,7 +2,7 @@ console.log("JavaScript loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    fetch("header.html")
+    fetch("/html/header.html")
         .then(response => response.text())
         .then(data => {
 
