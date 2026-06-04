@@ -99,7 +99,7 @@ dniInputs.forEach(input => {
     }
 
     const redirect = () => {
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     };
 
     if (modal && closeBtn) {
@@ -121,11 +121,11 @@ dniInputs.forEach(input => {
                 .then(() => {
 
                     form.reset();
-
-                    if (plusForm) plusForm.hidden = true;
-
                     if (modal) {
                         modal.classList.remove('hidden');
+
+
+                    if (plusForm) plusForm.hidden = true;
                     }
 
                 })
