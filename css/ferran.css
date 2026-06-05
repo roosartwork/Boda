@@ -1,3 +1,7 @@
+html, body {
+  overscroll-behavior: none;
+}
+
 main{
     display: flex;
     justify-content: space-evenly;
@@ -10,11 +14,14 @@ main{
     flex-direction: column;
     width: 45%;
     text-align: center;
-    color: antiquewhite;
-    padding: 1e 0;
+    color: antiquewhite;;
 }
 
-#card p{
+#text{
+    padding: 2em 0;
+}
+
+#text p{
    padding: 0 1em;
 }
 
@@ -24,23 +31,18 @@ main{
 }
 
 #foto{
+    object-fit: cover;
     width: 100%;
+    height: 15em;
+    object-position: center top;
 }
 
 #titleFerran{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 35%;
-    top: 85%;
-}
-
-#card h1{
-    font-family: Impact;
-    color: burlywood;
-    font-size: 3em;
-    align-self: center;
-    margin: 0;
+    width: 15em;
+    top: 80%;
 }
 
 #spotify{

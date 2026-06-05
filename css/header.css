@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 
 * {
     font-size: 1em;
+    font-family: Sniglet;
+}
+
+h1, h2{
+    font-family: Sofia;
+}
+
+html, body {
+  overscroll-behavior: none;
 }
 
 body {
@@ -156,6 +166,7 @@ body {
             justify-content: end;
             width: 80%;
             margin: 0px;
+            
         }
 
         nav ul a{

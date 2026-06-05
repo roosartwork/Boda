@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Sticky header + logo swap
             function updateHeader() {
 
-                if (window.scrollY > banner.offsetHeight) {
+                if (window.scrollY > banner.offsetHeight || window.innerWidth <= 1090) {
                     header.classList.add("sticky");
                     logo.src = stickySrc;
                 } else {
