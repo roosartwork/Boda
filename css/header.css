@@ -146,6 +146,7 @@ body {
             background-color: whitesmoke;
             padding: 0 2%;
             height: 2.5em;
+            z-index: 6;
         }
 
         nav ul{
@@ -259,6 +260,10 @@ body {
         border-radius: 15px;
         color:white;
         font-weight: bolder;
+    }
+
+    body:has(#nav-links.active) {
+        overflow: hidden;
     }
 
     #overlay{

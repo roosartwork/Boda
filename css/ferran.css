@@ -11,17 +11,29 @@ main{
     width: 45%;
     text-align: center;
     color: antiquewhite;
-    padding: 1em 0;
+    padding: 1e 0;
 }
 
 #card p{
    padding: 0 1em;
 }
 
-#card img{
-    align-self: center;
+#images{
+    position: relative;
+    padding-bottom: 1em;
+}
+
+#foto{
     width: 100%;
-} 
+}
+
+#titleFerran{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    top: 85%;
+}
 
 #card h1{
     font-family: Impact;
@@ -60,4 +72,24 @@ iframe{
 
 #yt2{
     right: 1em;
+}*/
+
+@media screen and (max-width: 1090px) {
+
+    body{
+        overflow-x: hidden;
+    }
+    
+    main{
+        flex-direction: column;
+    }
+
+    #card, #spotify{
+        width: 100%;
+    }
+
+    #spotify{
+        height: 46em;
+        padding: 0;
+    }
 }
