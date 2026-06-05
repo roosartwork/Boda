@@ -1,11 +1,14 @@
 html, body {
   overscroll-behavior: none;
+  overflow: hidden;
 }
 
 main{
     display: flex;
     justify-content: space-evenly;
     background-color: black;
+    min-height: calc(100vh - 80px);
+    flex: 1;
 }
 
 #card{
@@ -14,7 +17,7 @@ main{
     flex-direction: column;
     width: 45%;
     text-align: center;
-    color: antiquewhite;;
+    color: antiquewhite;
 }
 
 #text{
@@ -77,10 +80,6 @@ iframe{
 }*/
 
 @media screen and (max-width: 1090px) {
-
-    body{
-        overflow-x: hidden;
-    }
     
     main{
         flex-direction: column;
@@ -93,5 +92,10 @@ iframe{
     #spotify{
         height: 46em;
         padding: 0;
+    }
+
+    html, body{
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }
