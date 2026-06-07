@@ -1,9 +1,6 @@
-html, body {
-  overscroll-behavior: none;
-}
-
 body{
     background-color: burlywood;
+    min-height: 100vh;
 }
 
 main{
@@ -132,6 +129,10 @@ button{
 
 @media screen and (max-width: 1090px) {
 
+    main{
+        margin-top: 2em;
+    }
+    
     #formularios{
         display: flex;
         flex-direction: column;
@@ -140,5 +141,9 @@ button{
 
     #plus{
         padding-top: 2em;
+    }
+
+    #send{
+        margin-bottom: 1.5em;
     }
 }

@@ -31,12 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     header.classList.remove("sticky");
                     logo.src = originalSrc;
                 }
-
-                if (window.innerWidth <= 1090) {
-                    logo.src = stickySrc;
-                } else {
-                    logo.src = originalSrc;
-                }
             }
 
             // Initial setup

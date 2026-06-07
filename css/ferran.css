@@ -1,23 +1,25 @@
-html, body {
-  overscroll-behavior: none;
-  overflow: hidden;
+html{
+    background-color: black;
 }
 
 main{
     display: flex;
-    justify-content: space-evenly;
-    background-color: black;
-    min-height: calc(100vh - 80px);
-    flex: 1;
+    justify-content: space-around;
+    margin: 1.6em 2em 0.8em 2em;
 }
 
 #card{
     background-color: #303838;
-    display: flex;
-    flex-direction: column;
-    width: 45%;
     text-align: center;
     color: antiquewhite;
+    height: 46em;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;   
+    width: 45%;
+    border-radius:12px;
 }
 
 #text{
@@ -25,7 +27,7 @@ main{
 }
 
 #text p{
-   padding: 0 1em;
+   padding: 0 3em;
 }
 
 #images{
@@ -36,24 +38,35 @@ main{
 #foto{
     object-fit: cover;
     width: 100%;
-    height: 15em;
-    object-position: center top;
+    height: 12.5em;
+    object-position: center 25%;
+    border-radius: 10px 10px 0px 0px;
 }
 
 #titleFerran{
     position: absolute;
+    width: 40%;
     left: 50%;
+    bottom: -15%;
     transform: translateX(-50%);
-    width: 15em;
-    top: 80%;
 }
 
-#spotify{
-    width: 45%;
-    border-radius:12px;
-    padding: 3%;
-    border-color: black;
-    border-style: double;
+#rrss{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    align-self: center;
+    margin-top: 2em;
+}
+
+.socialLogo{
+    height: 5em;
+}
+
+#app{
+    height: 46em;
+    border: none;
 }
 
 /*.yt-container{
@@ -87,15 +100,26 @@ iframe{
 
     #card, #spotify{
         width: 100%;
+        height: auto;
+    }
+
+    #social{
+        padding-bottom: 3em;
+        height: 20%;
     }
 
     #spotify{
         height: 46em;
         padding: 0;
+        margin-top: 1.5em;
     }
 
     html, body{
-        overflow-y: auto;
         overflow-x: hidden;
+    }
+
+    #rrss{
+        margin: auto;
+        margin-bottom: 3em;
     }
 }
