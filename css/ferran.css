@@ -23,11 +23,15 @@ main{
 }
 
 #text{
-    padding: 2em 0;
+    padding-top: 2em;
 }
 
 #text p{
    padding: 0 3em;
+}
+
+#bottomText{
+   margin: 2em 0;
 }
 
 #images{
@@ -57,11 +61,10 @@ main{
     justify-content: space-around;
     width: 70%;
     align-self: center;
-    margin-top: 2em;
 }
 
 .socialLogo{
-    height: 5em;
+    height: 4em;
 }
 
 #app{
@@ -103,16 +106,14 @@ iframe{
         height: auto;
     }
 
-    #social{
-        padding-bottom: 3em;
-        height: 20%;
-        align-content: center;
+    #rrss{
+        flex-wrap: wrap;
     }
-
+    
     .socialLogo{
-    height: 4em;
-    padding: 0.7em;
-}
+        height: 4em;
+        padding: 0.7em;
+    }
 
     #spotify{
         height: 46em;
@@ -124,4 +125,10 @@ iframe{
         margin: auto;
         margin-bottom: 3em;
     }
+}
+
+@media screen and (max-width: 468px){
+    #logo1{order: 1;}
+    #logo2{order: 3;}
+    #logo3{order: 2;}
 }
