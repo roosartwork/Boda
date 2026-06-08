@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Englebert');
+
 
 * {
     font-size: 1em;
-    font-family: Sniglet;
+    font-family: Englebert;
 }
 
 h1, h2{

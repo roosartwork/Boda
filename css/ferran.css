@@ -131,4 +131,9 @@ iframe{
     #logo1{order: 1;}
     #logo2{order: 3;}
     #logo3{order: 2;}
+
+    #titleFerran{
+        bottom: -10%;
+        width: 50%;
+    }
 }

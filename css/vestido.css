@@ -31,7 +31,7 @@ h1{
 }
 
 ul{
-    list-style: circle;
+    list-style-type: "𑣲⋆ ";
 }
 
 #smiley{
@@ -46,7 +46,7 @@ ul{
     justify-content: space-around;
 }
 
-#collection img{
+#collection img, #extrapic img{
     width: 19%;
 }
 
@@ -54,10 +54,6 @@ ul{
     display: flex;
     justify-content: center;
     padding-top: 2%;
-}
-
-#extrapic img{
-    width: 19%;
 }
 
 p{
@@ -68,24 +64,39 @@ p{
 }
 
 @media screen and (max-width: 1090px) {
-    #collection {
-        flex-direction: column;
-        justify-content: center;
+    #collection{
+        flex-wrap: wrap;
     }
 
-    #collection img{
-        width: 80%;
-    }
-
-    #extrapic img{
-        width: 80%;
+    #collection img, #extrapic img{
+        width: 30%;
+        padding-bottom: 0;
+        padding-top: 1.5em;
     }
 
     .columns {
         flex-direction: column;
+        padding: 5%;
     }
 
     .columns div {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #collection{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #collection img, #extrapic img{
+        width: 80%;
+        padding-bottom: 0;
+        padding-top: 1.5em;
+    }
+
+    .columns{
+        padding: 3% 0 1.5% 0;
     }
 }

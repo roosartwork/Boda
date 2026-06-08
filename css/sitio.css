@@ -5,3 +5,7 @@ html, body {
 body{
     background-color: burlywood
 }
+
+main{
+  padding: 1.5em;
+}
