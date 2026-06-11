@@ -53,7 +53,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     margin-right: 0;
-    margin-top:1em;
+    margin-top:0;
 
     width: 30px;
     height: 22px;
@@ -184,20 +184,20 @@ body {
             justify-content: end;
             width: 80%;
             margin: 0px;
-            
         }
 
         nav ul a{
-            padding: 0 1%;
+            padding: 0 1em 0.1em 1em;
             transform: skewX(-20deg);
             text-decoration: none;
             color: palevioletred;
+            align-content: center;
         }
 
         nav ul a li{
             font-size: large;
             transform: skewX(20deg);
-            line-height: 2.2rem;
+            
         }
 
         nav ul a:hover{

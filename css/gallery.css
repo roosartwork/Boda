@@ -3,11 +3,17 @@ body{
 }
 
 main{
-    padding: 2em;
+    margin: 2em;
 }
 
-#chooseBtn{
-    margin: 2em;
+.parrafos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parrafos p{
+    margin: 0.5em;
 }
 
 #gallery{
@@ -17,22 +23,47 @@ main{
 }
 
 h1{
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
-button{
+#buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    height: 4em;
+}
+
+#buttons button{
     cursor: grab;
-    margin-bottom: 1rem;
     border:none;
     box-shadow: 0px 0px 14px rgba(92, 53, 25, 0.548);
     background: white;
     color: palevioletred;
     text-decoration: none;
     border-radius: 10px;
-    padding: 0 1em;
+    margin: 0 2em;
+    width: 13em;
 }
 
-button:hover{
+#buttons button:disabled {
+    background: white;
+    color: palevioletred;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+#buttons button:disabled:hover, #buttons button:disabled:hover p{
+    transform: none;
+    transition: none;
+    font-size: 1em;
+    font-weight: 100;
+    background: white;
+    color: palevioletred;
+    text-shadow: none;
+}
+
+#buttons button:hover{
     background-color: pink;
     transition: all ease-in 500ms;
     border-radius: 10px;
@@ -40,10 +71,9 @@ button:hover{
     font-weight: bolder;
     text-shadow: 0px 0px 14px rgb(182, 2686);
     transform: skewX(-20deg);
-    
 }
 
-button:hover p{
+#buttons button:hover p{
     transform: skewX(20deg);
     font-size: larger;
     transition: all ease-in 500ms;
@@ -146,3 +176,4 @@ button:hover p{
     font-weight: bolder;
     text-shadow: 0px 0px 14px rgb(182, 26, 86);
 }
+
