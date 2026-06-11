@@ -8,6 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const chooseBtn = document.getElementById("chooseBtn");
   const uploadBtn = document.getElementById("uploadBtn");
   const gallery = document.getElementById("gallery");
+  const modal = document.getElementById("zoom");
+  const closeModal = document.getElementById("X");
+  const modalImage = document.getElementById("imageModal");
+  const downloadBtnModal = document.getElementById("download");
 
   let selectedFiles = [];
 
@@ -76,6 +80,16 @@ window.addEventListener("DOMContentLoaded", () => {
         media.classList.add("photos");
       }
 
+      media.addEventListener("click", () => {
+      modalImage.src = url;
+
+      downloadBtnModal.download = file.name;
+      downloadBtnModal.href = url;
+
+      document.body.style.overflow = "hidden";
+      modal.classList.add("active");
+    });
+      
       const card = document.createElement("div");
       card.classList.add("post");
 
@@ -87,5 +101,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
   loadGallery();
 
+  closeModal.addEventListener("click", () => {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  });
+
+  modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
 
 });
