@@ -13,6 +13,7 @@ main{
 #gallery{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .post{
@@ -25,4 +26,5 @@ main{
 
 .photos:hover {
     transform: scale(130%);
+    transition: transform 0.2s ease-in-out;
 }
