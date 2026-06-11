@@ -230,16 +230,12 @@ body {
         z-index: 5;
 
         position: absolute;
-        top: 100%;
+        top: 290%;
         right: 0;
 
         width: 100%;
 
         padding: 0;
-
-        /* HIDDEN */
-        max-height: 0;
-        overflow: hidden;
 
         opacity: 0;
         transform: translateY(-10px);

@@ -1,6 +1,6 @@
 const supabaseClient = supabase.createClient(
   "https://ejwneemiwnyzujcwzldf.supabase.co",
-  "YOUR_ANON_KEY"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqd25lZW1pd255enVqY3d6bGRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMTQ0OTEsImV4cCI6MjA5NjU5MDQ5MX0.Nqa_wsgEuJHptNhQFvb24x30mtdnC_v4EPPUzlRgooA"
 );
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -19,7 +19,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   fileInput.addEventListener("change", (e) => {
     selectedFiles = Array.from(e.target.files);
-
     uploadBtn.style.display = selectedFiles.length ? "inline-block" : "none";
   });
 
@@ -30,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const fileName = `${Date.now()}-${file.name}`;
 
       const { error } = await supabaseClient.storage
-        .from("boda")
+        .from("Boda")
         .upload(fileName, file);
 
       if (error) {
@@ -42,12 +41,12 @@ window.addEventListener("DOMContentLoaded", () => {
     fileInput.value = "";
     uploadBtn.style.display = "none";
 
-    loadGallery();
+    await loadGallery();
   });
 
   async function loadGallery() {
     const { data, error } = await supabaseClient.storage
-      .from("boda")
+      .from("Boda")
       .list("", { limit: 100 });
 
     if (error) {
@@ -59,35 +58,34 @@ window.addEventListener("DOMContentLoaded", () => {
 
     for (const file of data) {
       const url = supabaseClient.storage
-        .from("boda")
+        .from("Boda")
         .getPublicUrl(file.name).data.publicUrl;
 
       const ext = file.name.split(".").pop().toLowerCase();
 
       let media;
 
-      if (["mp4", "webm", "mov"].includes(ext)) {
+      if (["mp4", "webm", "mov", "mkv", "avi"].includes(ext)) {
         media = document.createElement("video");
         media.src = url;
         media.controls = true;
-        media.width = 300;
       } else {
         media = document.createElement("img");
         media.src = url;
-        media.width = 300;
+        media.alt = file.name;
+        media.classList.add("photos");
       }
 
-      gallery.appendChild(media);
+      const card = document.createElement("div");
+      card.classList.add("post");
 
-      const download = document.createElement("a");
-      download.href = url;
-      download.download = "";
-      download.textContent = "Download";
+      card.appendChild(media);
 
-      gallery.appendChild(download);
-      gallery.appendChild(document.createElement("hr"));
+      gallery.appendChild(card);
     }
   }
 
   loadGallery();
+
+
 });

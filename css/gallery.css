@@ -5,3 +5,24 @@ body{
 main{
     padding: 2em;
 }
+
+#chooseBtn{
+    margin: 2em;
+}
+
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post{
+    margin: 2em;
+}
+
+.photos{
+    width:20em;
+}
+
+.photos:hover {
+    transform: scale(130%);
+}
