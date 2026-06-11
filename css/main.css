@@ -24,14 +24,6 @@ main{
     object-position: right bottom;
 }
 
-h1{
-    color: white;
-    text-shadow: -1px -1px 0 rgb(94, 53, 38), 1px -1px 0 rgb(94, 53, 38), -1px 1px 0 rgb(94, 53, 38), 1px 1px 0 rgb(94, 53, 38);
-    font-size: 300%;
-    display: flex;
-    justify-content: center;
-}
-
 #fullText{
     padding: 2em 4em;
 }

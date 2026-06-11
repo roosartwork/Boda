@@ -9,16 +9,6 @@ main{
     position: relative;
 }
 
-h1{
-    font-family: Impact;
-    color: grey;
-    font-size: 300%;
-    margin: 0;
-    text-align: center;
-    padding-top: 2%;
-    margin-bottom: -0.4em;
-}
-
 p{
     font-size: small;
     text-align: center;
