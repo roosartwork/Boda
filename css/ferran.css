@@ -31,7 +31,7 @@ main{
 }
 
 #bottomText{
-   margin: 2em 0;
+   margin-top: 2em;
 }
 
 #images{
@@ -60,7 +60,13 @@ main{
     flex-direction: row;
     justify-content: space-around;
     width: 70%;
-    align-self: center;
+    justify-self: center;
+    margin-top: 5em;
+}
+
+#signature{
+    padding: 0;
+    margin-right: 3em;
 }
 
 .socialLogo{
@@ -94,6 +100,12 @@ iframe{
 #yt2{
     right: 1em;
 }*/
+@media screen and (max-width: 1600px) {
+
+    #rrss{
+        margin-top: 0;
+    }
+}
 
 @media screen and (max-width: 1090px) {
     

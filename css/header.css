@@ -40,6 +40,20 @@ body {
     z-index: 10;
 }
 
+#signature{
+    font-weight: bolder;
+    font-size: larger;
+    display: flex;
+    justify-content: right;
+    padding-top: 2em;
+    padding-right: 1em;
+}
+
+
+#underline{
+    text-decoration: underline wavy palevioletred;
+}
+
 /* HEADER */
 .sticky{
     position: fixed;
@@ -90,7 +104,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(#18412da1, #3038384f), url(../img/header.jpg);
-    background-position-y: bottom;
+    background-position-y: 60%;
     filter: blur(3px); /* Adjust blur radius as needed */
 }
 
@@ -308,4 +322,13 @@ body {
         opacity: 1;
         pointer-events: all;
     }
+}
+
+@media screen and (max-width: 900px){
+
+    #banner img{
+        margin-left: auto;
+        margin-right: 1em;
+    }
+
 }

@@ -21,6 +21,16 @@ p {
 .media{
     display: flex;
     flex-direction: row;
+    margin: 2em 0;
+}
+
+#housing{
+    margin-bottom: 0;
+}
+
+#signature{
+    margin-bottom: 1em;
+    padding-top: 0;
 }
 
 @media screen and (max-width: 1090px) {
@@ -32,13 +42,16 @@ p {
 
     .map{
         position: absolute;
-        transform: translateX(6%) translateY(6%);
         width: 50%;
-        aspect-ratio:1/1;        
+        padding-left: 1em;
+        max-width: 28em;
+        aspect-ratio:1/1;
+        display: flex;
+        align-self: center;
     }
 
     .media{
-        position: relative;
+        height: 30em;
     }
 
     #door{
@@ -47,5 +60,17 @@ p {
 
     h1{
         font-size: 200%;
+    }
+}
+
+@media screen and (max-width: 898px) {
+    .media{
+        justify-content: center;
+    }
+
+    .map{
+        aspect-ratio: 4/3;
+        width: 80%;
+        padding: 0;
     }
 }

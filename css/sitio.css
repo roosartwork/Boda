@@ -9,3 +9,58 @@ body{
 main{
   padding: 1.5em;
 }
+
+.map{
+    width: 50%;
+  aspect-ratio: 1/1;  
+}
+
+.photo{
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 1/1;
+        width: 50%;
+    }
+
+.media{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1090px) {
+
+    .photo{
+        object-fit: cover;
+        width: 100%;
+        object-position: top left;
+    }
+
+    .map{
+        position: absolute;
+        width: 50%;
+        padding-left: 1em;
+        max-width: 28em;
+        aspect-ratio:1/1;
+        display: flex;
+        align-self: center;
+    }
+
+    .media{
+        height: 30em;
+    }
+
+    @media screen and (max-width: 898px) {
+    .media{
+        justify-content: center;
+    }
+
+    .map{
+        aspect-ratio: 4/3;
+        width: 80%;
+        padding: 0;
+    }
+
+    .photo{
+      object-position: center;
+    }
+  }
