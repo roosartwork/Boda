@@ -1,14 +1,15 @@
 /* MAIN */
 
 html, body {
-  overscroll-behavior: none;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 body{
     background-color: burlywood;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 main{
