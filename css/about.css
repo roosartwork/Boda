@@ -1,0 +1,11 @@
+html, body {
+  overscroll-behavior: none;
+}
+
+body{
+    background-color: burlywood;
+}
+
+#content {
+    padding-top: 2em;
+}
