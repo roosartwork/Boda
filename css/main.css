@@ -98,12 +98,8 @@ body{
     }
 }
 
-@media screen and (max-width: 400) {
-    #footer{
+@media screen and (max-width: 400px) {
+    #us{
         visibility: hidden;
-    }
-
-    body{
-    overflow-y:scroll;
     }
 }
