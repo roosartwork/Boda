@@ -50,13 +50,6 @@ body{
     overflow-x: hidden;
 }
 
-#nature{            
-    object-fit: cover;
-    width: 100%;
-    height: 15em;
-    object-position: right bottom;
-}
-
 @media screen and (max-width:913px) {
     #signature{
         padding: 0;
@@ -68,7 +61,7 @@ body{
 @media screen and (max-width: 600px) {
 
     .columns{
-    display:block;
+    display: block;
     }
 
     .columns p{
@@ -77,5 +70,9 @@ body{
 
     #fullText{
         padding: 0;
+    }
+
+    html, body {
+    overflow: scroll;
     }
 }
