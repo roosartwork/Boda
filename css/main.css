@@ -50,18 +50,6 @@ body{
     overflow-x: hidden;
 }
 
-#footer{
-    overflow: hidden;
-}
-
-#us{
-    position: absolute;
-    height: 30%;
-    bottom: 0;
-    right: 0;
-    top: auto;
-}
-
 #nature{            
     object-fit: cover;
     width: 100%;
@@ -89,17 +77,5 @@ body{
 
     #fullText{
         padding: 0;
-    }
-}
-
-@media screen and (max-width: 655px) {
-    #us{
-        height: 20%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #us{
-        visibility: hidden;
     }
 }

@@ -9,3 +9,27 @@ body{
 #content {
     padding: 2em;
 }
+
+footer{
+    overflow: hidden;
+}
+
+#us{
+    position: absolute;
+    height: 30%;
+    bottom: 0;
+    right: 0;
+    top: auto;
+}
+
+@media screen and (max-width: 655px) {
+    #us{
+        height: 20%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #us{
+        visibility: hidden;
+    }
+}
