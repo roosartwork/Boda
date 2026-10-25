@@ -3,7 +3,6 @@
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
 }
 
 body{
@@ -70,9 +69,5 @@ body{
 
     #fullText{
         padding: 0;
-    }
-
-    html, body {
-    overflow: scroll;
     }
 }
