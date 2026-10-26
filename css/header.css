@@ -56,24 +56,33 @@ body {
 
 #bubble{
     background-color: rgb(255, 217, 229);
-    padding: 1em;
-    padding-bottom: 1.5em;
+    padding: 1.5em;
     text-align: center;
     border-radius: 1em;
     width:fit-content;
+    position: relative;
 }
 
 #asterisk{
     color:darkred;
-    font-size:2em
+    font-size:2em;
+    float: left;
+    left: 0;
+    top: 0;
+    padding-left: 0.2em;
+    position: absolute;
 }
 
+#footer{
+    position: relative;
+}
 
 #nature{            
     object-fit: cover;
     width: 100%;
     height: 15em;
     object-position: right center;
+    display: block;
 }
 
 /* HEADER */
@@ -89,7 +98,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     margin-right: 0;
-    margin-top:0;
+    margin-top:;
 
     width: 30px;
     height: 22px;
@@ -278,20 +287,20 @@ body {
     }
 
     nav ul {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         z-index: 5;
 
-        position: absolute;
-        top: 290%;
-        right: 0;
+        position: fixed;
+        inset: 0;
 
         width: 100%;
 
         padding: 0;
 
         opacity: 0;
-        transform: translateY(-10px);
 
         pointer-events: none;
 
@@ -301,7 +310,6 @@ body {
     }
     
     nav ul.active {
-        max-height: 500px; /* enough to contain items */
         opacity: 1;
         transform: translateY(0);
         padding: 1rem 0;
