@@ -58,40 +58,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function updatePageScroll() {
     const main = document.querySelector("main");
+    const footer = document.querySelector("#footer");
 
     if (!main) return;
 
-    const mainHeight = main.scrollHeight;
+    const mainHeight = main.getBoundingClientRect().height;
     const viewportHeight = window.innerHeight;
 
-    document.body.style.overflowY =
-        mainHeight > viewportHeight ? "auto" : "hidden";
+    const needsScroll = mainHeight > viewportHeight;
 
-    // Hide footer when main exceeds the viewport
-    const footer = document.querySelector("#footer");
+    document.documentElement.style.overflowY = needsScroll ? "auto" : "hidden";
+    document.body.style.overflowY = needsScroll ? "auto" : "hidden";
 
     if (footer) {
-        footer.style.display =
-            mainHeight > viewportHeight ? "none" : "";
+        footer.style.display = needsScroll ? "none" : "";
     }
 }
 
-window.addEventListener("load", updatePageScroll);
-window.addEventListener("resize", updatePageScroll);
+function initPageScroll() {
+    const main = document.querySelector("main");
 
-const main = document.querySelector("main");
+    if (!main) return;
 
-if (main) {
-    const observer = new ResizeObserver(updatePageScroll);
+    const observer = new ResizeObserver(() => {
+        updatePageScroll();
+    });
+
     observer.observe(main);
 
-    const mutationObserver = new MutationObserver(updatePageScroll);
+    window.addEventListener("resize", updatePageScroll);
 
-    mutationObserver.observe(main, {
-        childList: true,
-        subtree: true,
-        attributes: true
-    });
+    updatePageScroll();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPageScroll);
+} else {
+    initPageScroll();
 }
 
         
