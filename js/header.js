@@ -56,33 +56,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
         })
 
-         function updatePageScroll() {
-        const main = document.querySelector("main");
-
-        if (!main) return;
-
-        const mainHeight = main.getBoundingClientRect().height;
-        const viewportHeight = window.innerHeight;
-
-        document.body.style.overflowY =
-            mainHeight > viewportHeight ? "auto" : "hidden";
-    }
-
-    window.addEventListener("resize", updatePageScroll);
-    window.addEventListener("load", updatePageScroll);
-
+function updatePageScroll() {
     const main = document.querySelector("main");
 
-if (main) {
-    const observer = new MutationObserver(() => {
-        updatePageScroll();
-    });
+    if (!main) return;
 
-    observer.observe(main, {
+    const mainHeight = main.scrollHeight;
+    const viewportHeight = window.innerHeight;
+
+    document.body.style.overflowY =
+        mainHeight > viewportHeight ? "auto" : "hidden";
+
+    // Hide footer when main exceeds the viewport
+    const footer = document.querySelector("#footer");
+
+    if (footer) {
+        footer.style.display =
+            mainHeight > viewportHeight ? "none" : "";
+    }
+}
+
+window.addEventListener("load", updatePageScroll);
+window.addEventListener("resize", updatePageScroll);
+
+const main = document.querySelector("main");
+
+if (main) {
+    const observer = new ResizeObserver(updatePageScroll);
+    observer.observe(main);
+
+    const mutationObserver = new MutationObserver(updatePageScroll);
+
+    mutationObserver.observe(main, {
         childList: true,
         subtree: true,
         attributes: true
     });
 }
+
+        
+ //       function updatePageScroll() {
+ //      const main = document.querySelector("main");
+//
+ //      if (!main) return;
+//
+ //      const mainHeight = main.getBoundingClientRect().height;
+ //      const viewportHeight = window.innerHeight;
+//
+ //      document.body.style.overflowY =
+ //          mainHeight > viewportHeight ? "auto" : "hidden";
+ //  }
+//
+ //  window.addEventListener("resize", updatePageScroll);
+ //  window.addEventListener("load", updatePageScroll);
+//
+ //  const main = document.querySelector("main");
+//
+//if (main) {
+ //  const observer = new MutationObserver(() => {
+ //      updatePageScroll();
+ //  });
+//
+ //  observer.observe(main, {
+ //      childList: true,
+ //      subtree: true,
+ //      attributes: true
+ //  });
+//}
 
 });
