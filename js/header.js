@@ -59,18 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Error loading header:", error));
 
             function updatePageScroll() {
-        const main = document.querySelector("main");
+                const main = document.querySelector("main");
 
-        if (!main) return;
+                if (!main) return;
 
-        const mainHeight = main.getBoundingClientRect().height;
-        const viewportHeight = window.innerHeight;
+                const mainHeight = main.getBoundingClientRect().height;
+                const viewportHeight = window.innerHeight;
 
-        document.body.style.overflowY =
-            mainHeight > viewportHeight ? "auto" : "hidden";
-    }
+                document.body.style.overflowY =
+                    mainHeight > viewportHeight ? "auto" : "hidden";
+            }
 
-    window.addEventListener("resize", updatePageScroll);
-    window.addEventListener("load", updatePageScroll);
+            window.addEventListener("resize", updatePageScroll);
+            window.addEventListener("load", updatePageScroll);
 
 });
