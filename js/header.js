@@ -56,36 +56,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         })
 
-if (!window.location.pathname.endsWith("invitacion.html")) {
-
-    function updatePageScroll() {
-        const main = document.querySelector("main");
-
-        if (!main) return;
-
-        const mainHeight = main.getBoundingClientRect().height;
-        const viewportHeight = window.innerHeight;
-
-        document.body.style.overflowY =
-            mainHeight > viewportHeight ? "auto" : "hidden";
-    }
-
-    window.addEventListener("resize", updatePageScroll);
-    window.addEventListener("load", updatePageScroll);
-
-    const main = document.querySelector("main");
-
-    if (main) {
-        const observer = new MutationObserver(() => {
-            updatePageScroll();
-        });
-
-        observer.observe(main, {
-            childList: true,
-            subtree: true,
-            attributes: true
-        });
-    }
-}
+//if (!window.location.pathname.endsWith("invitacion.html")) {
+//
+//    function updatePageScroll() {
+//        const main = document.querySelector("main");
+//
+//        if (!main) return;
+//
+//        const mainHeight = main.getBoundingClientRect().height;
+//        const viewportHeight = window.innerHeight;
+//
+//        document.body.style.overflowY =
+//            mainHeight > viewportHeight ? "auto" : "hidden";
+//    }
+//
+//    window.addEventListener("resize", updatePageScroll);
+//    window.addEventListener("load", updatePageScroll);
+//
+//    const main = document.querySelector("main");
+//
+//    if (main) {
+//        const observer = new MutationObserver(() => {
+//            updatePageScroll();
+//        });
+//
+//        observer.observe(main, {
+//            childList: true,
+//            subtree: true,
+//            attributes: true
+//        });
+//    }
+//}
 
 });
